@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http//thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<section th:fragment="table">
+<table>
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Edad</th>
+        <th>Genero</th>
+        <th>Descripcion</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="registro : ${result}">
+        <td th:text="${registro.id}">ID</td>
+        <td th:text="${registro.nombre}">Nombre</td>
+        <td th:text="${registro.apellido}">Apellido</td>
+        <td th:text="${registro.correo}">Correo</td>
+        <td th:text="${registro.descripcion}">Descripción</td>
+        <td>
+            <a th:href="@{/registro/edit/{id}(id=${registro.id})}">Editar</a>
+        </td>
+        <td>
+            <a th:href="@{/lista/{id}(id=${registro.id})}">Eliminar</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</section>
+
+</body>
+</html>

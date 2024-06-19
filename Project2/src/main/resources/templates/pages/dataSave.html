@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http//thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="w-full h-auto flex flex-col bg-yellow-50">
+<section class="w-full h-[110vh] flex flex-col justify-between">
+    <header th:insert="fragments/header.html :: header" class="w-full h-20"></header>
+    <section th:insert="fragments/table.html :: table"></section>
+    <footer th:insert="fragments/footer.html :: footer" class="w-full h-20 flex"></footer>
+</section>
+</body>
+</html>
